@@ -44,4 +44,12 @@ public class DoctorServiceImpl implements DoctorService {
 		return this.doctorRepository.findByOPD(opd);
 	}
 
+	@Override
+	public void deleteDoctor(Long dId) {
+		// TODO Auto-generated method stub
+		Doctor doctor=new Doctor();
+		doctor.setdId(dId);
+		this.doctorRepository.delete(doctor);
+	}
+
 }

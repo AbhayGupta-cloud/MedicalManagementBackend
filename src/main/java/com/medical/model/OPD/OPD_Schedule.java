@@ -27,6 +27,12 @@ public class OPD_Schedule {
 	private boolean active=false;
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Department department;
+	public Set<Doctor> getDoctors() {
+		return doctors;
+	}
+	public void setDoctors(Set<Doctor> doctors) {
+		this.doctors = doctors;
+	}
 	@OneToMany(mappedBy ="opdSchedule",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Set<Doctor> doctors=new HashSet<>();

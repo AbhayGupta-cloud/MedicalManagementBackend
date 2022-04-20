@@ -11,4 +11,5 @@ public interface DoctorService {
 	public Set<Doctor> getDoctors();
 	public Doctor getDoctor(Long dId);
 	public Set<Doctor> getDoctorsByOPD(OPD_Schedule opd);
+	public void deleteDoctor(Long dId);
 }
