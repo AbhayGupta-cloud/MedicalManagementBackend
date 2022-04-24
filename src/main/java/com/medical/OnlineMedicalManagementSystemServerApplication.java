@@ -33,7 +33,6 @@ public class OnlineMedicalManagementSystemServerApplication implements CommandLi
 		// TODO Auto-generated method stub
 		System.out.println("Starting code...");
 		//User user=new User();
-		
 //		user.setFirstName("Abhay");
 //		user.setLastName("Gupta");
 //		user.setUsername("Abhay@1234");

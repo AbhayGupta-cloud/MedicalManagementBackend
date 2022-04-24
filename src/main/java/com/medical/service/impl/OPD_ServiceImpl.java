@@ -38,9 +38,9 @@ public class OPD_ServiceImpl implements OPD_ScheduleService {
 	@Override
 	public void deleteOpd_Schedule(Long opdId) {
 		// TODO Auto-generated method stub
-		OPD_Schedule opd_Schedule=new OPD_Schedule();
-		opd_Schedule.setsId(opdId);
-		this.opd_ScheduleRepository.delete(opd_Schedule);
+//		OPD_Schedule opd_Schedule=new OPD_Schedule();
+//		opd_Schedule.setsId(opdId);
+		this.opd_ScheduleRepository.deleteById(opdId);
 	}
 
 
