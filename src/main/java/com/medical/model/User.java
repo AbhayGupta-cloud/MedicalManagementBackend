@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -25,6 +26,7 @@ public class User implements UserDetails{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long userId;
 	private String username;
+	//@Column(nullable = false)
 	private String passsword;
 	private String diseaseDepartment;
 	private String firstName;
@@ -39,7 +41,7 @@ public class User implements UserDetails{
 	private Set<UserRole> userRoles=new HashSet<>();
 	
 	public String getPasssword() {
-		return passsword;
+		return this.passsword;
 	}
 	public void setPasssword(String passsword) {
 		this.passsword = passsword;
@@ -108,7 +110,6 @@ public class User implements UserDetails{
 	}
 	public User(Long userId, String username, String passsword, String diseaseDepartment, String firstName,
 			String lastName, String email, String phone, boolean enabled, String profile, Set<UserRole> userRoles) {
-		super();
 		this.userId = userId;
 		this.username = username;
 		this.passsword = passsword;
@@ -133,7 +134,7 @@ public class User implements UserDetails{
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return passsword;
+		return this.passsword;
 	}
 	@Override
 	public boolean isAccountNonExpired() {
@@ -150,6 +151,7 @@ public class User implements UserDetails{
 		// TODO Auto-generated method stub
 		return true;
 	}
+
 	
 	
 }

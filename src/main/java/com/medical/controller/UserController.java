@@ -29,7 +29,7 @@ public class UserController {
 	private UserService userService;
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-	@ExceptionHandler(Exception.class)
+	//@ExceptionHandler(Exception.class)
 	@PostMapping("/")
 	public User createUser(@RequestBody User user) throws Exception {
 		
@@ -44,13 +44,13 @@ public class UserController {
 		roles.add(userRole);
 		return this.userService.createUser(user,roles);
 	}
-	@ExceptionHandler(Exception.class)
+	//@ExceptionHandler(Exception.class)
 	@GetMapping("/{username}")
 	public User getUser(@PathVariable("username") String username) {
 		return this.userService.getUser(username);
 	}
 	//delete  the user by id
-	@ExceptionHandler(Exception.class)
+	//@ExceptionHandler(Exception.class)
 	public void deleteUser(@PathVariable("userId") Long userId) {
 		this.userService.deleteUser(userId);
 	}

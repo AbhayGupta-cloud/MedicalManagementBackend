@@ -22,7 +22,7 @@ public class Department {
 	private Long did;
 	private String departmentName;
 	private String description;
-	@OneToMany(mappedBy = "department",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "department",cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Set<OPD_Schedule> schedule=new LinkedHashSet<>();
 	public Department() {
