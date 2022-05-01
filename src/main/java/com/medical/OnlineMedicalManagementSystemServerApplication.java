@@ -52,6 +52,7 @@ public class OnlineMedicalManagementSystemServerApplication implements CommandLi
 		System.out.println("Starting code...");
 		//User user=new User();
 //		user.setFirstName("Abhay");
+		
 //		user.setLastName("Gupta");
 //		user.setUsername("Abhay@1234");
 //		user.setPasssword(this.bcryptPasswordEncoder.encode("Abhay@123456"));
@@ -62,6 +63,7 @@ public class OnlineMedicalManagementSystemServerApplication implements CommandLi
 //		role1.setRoleName("Admin");
 //		Set<UserRole> userRoleSet=new HashSet<>();
 //		UserRole userRole=new UserRole();
+		
 //		userRole.setRole(role1);
 //		userRole.setUser(user);
 //		userRoleSet.add(userRole);

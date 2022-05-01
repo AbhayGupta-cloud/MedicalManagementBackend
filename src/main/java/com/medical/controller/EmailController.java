@@ -47,11 +47,13 @@ public class EmailController {
         Context context = new Context();
         context.setVariables(model);
         String html = templateEngine.process("email-template", context);
-
+      
+//      System.out.println(html);
         try {
             helper.setTo(user.getEmail());
-            helper.setText(html,true);
-            helper.setSubject("Test Mail");
+          helper.setText("Username:"+user.getUsername()+"  FirstName:"+user.getFirstName()+"  LastName:"+user.getLastName()+"  Email:"+user.getEmail()+"  Phone:"+user.getPhone(), false);
+            //helper.setText(html,true);
+            helper.setSubject("Registration Confirmation From Gupta Healthcare.");
         } catch (javax.mail.MessagingException e) {
             e.printStackTrace();
         }

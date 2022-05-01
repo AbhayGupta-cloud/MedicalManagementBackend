@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -22,7 +23,8 @@ public class Department {
 	private Long did;
 	private String departmentName;
 	private String description;
-	@OneToMany(mappedBy = "department",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "department",cascade = CascadeType.ALL,orphanRemoval = true)
+	//@JoinColumn(name = "department", foreignKey = @javax.persistence.ForeignKey(name = "none"))
 	@JsonIgnore
 	private Set<OPD_Schedule> schedule=new LinkedHashSet<>();
 	public Department() {
