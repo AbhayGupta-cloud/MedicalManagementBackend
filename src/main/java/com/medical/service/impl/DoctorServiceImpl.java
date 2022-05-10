@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.medical.model.OPD.Doctor;
-import com.medical.model.OPD.OPD_Schedule;
+import com.medical.model.OPD.OPDSchedule;
 import com.medical.repository.DoctorRepository;
 import com.medical.service.DoctorService;
 @Service
@@ -39,9 +39,9 @@ public class DoctorServiceImpl implements DoctorService {
 	}
 
 	@Override
-	public Set<Doctor> getDoctorsByOPD(OPD_Schedule opd) {
+	public Set<Doctor> getDoctorsByOPD(OPDSchedule opd) {
 		// TODO Auto-generated method stub
-		return this.doctorRepository.findByOPD(opd);
+		return this.doctorRepository.findByOpd(opd);
 	}
 
 	@Override

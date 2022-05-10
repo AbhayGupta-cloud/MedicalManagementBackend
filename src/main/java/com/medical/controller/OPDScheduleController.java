@@ -12,23 +12,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.medical.model.OPD.OPD_Schedule;
-import com.medical.service.OPD_ScheduleService;
+import com.medical.model.OPD.OPDSchedule;
+import com.medical.service.OPDScheduleService;
 
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/opdSchedule")
-public class OPD_ScheduleController {
+public class OPDScheduleController {
 	@Autowired
-	private OPD_ScheduleService opd_ScheduleService;
+	private OPDScheduleService opd_ScheduleService;
 	//add opd schedule service
 	@PostMapping("/")
-	public ResponseEntity<OPD_Schedule> add(@RequestBody OPD_Schedule opd_Schedule){
+	public ResponseEntity<OPDSchedule> add(@RequestBody OPDSchedule opd_Schedule){
 		return ResponseEntity.ok(this.opd_ScheduleService.addOpd_Schedule(opd_Schedule));
 	}
 	//update opd schedule
 	@PutMapping("/")
-	public ResponseEntity<OPD_Schedule> update(@RequestBody OPD_Schedule opd_Schedule){
+	public ResponseEntity<OPDSchedule> update(@RequestBody OPDSchedule opd_Schedule){
 		return ResponseEntity.ok(this.opd_ScheduleService.updateOpd_Schedule(opd_Schedule));
 	}
 	//get schedule
@@ -38,7 +38,7 @@ public class OPD_ScheduleController {
 	}
 	//get single schedule
 	@GetMapping("/{oid}")
-	public OPD_Schedule schedule(@PathVariable("oid")Long oid) {
+	public OPDSchedule schedule(@PathVariable("oid")Long oid) {
 		return this.opd_ScheduleService.getOpd_Schedule(oid);
 	}
 	//delete schedule

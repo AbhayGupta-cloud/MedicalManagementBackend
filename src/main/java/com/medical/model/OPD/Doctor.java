@@ -17,20 +17,20 @@ public class Doctor {
 	private String doctorQualification;
 	private String doctorWorkExperience;
 	@ManyToOne(fetch = FetchType.EAGER)
-	private OPD_Schedule opdSchedule;
+	private OPDSchedule opd;
 	
 	public Doctor() {
 		// TODO Auto-generated constructor stub
 	}
 	public Doctor(String doctorName, String doctorMobileNo, String doctorEmailId, String doctorQualification,
-			String doctorWorkExperience, OPD_Schedule opdSchedule) {
+			String doctorWorkExperience, OPDSchedule opd) {
 		super();
 		this.doctorName = doctorName;
 		this.doctorMobileNo = doctorMobileNo;
 		this.doctorEmailId = doctorEmailId;
 		this.doctorQualification = doctorQualification;
 		this.doctorWorkExperience = doctorWorkExperience;
-		this.opdSchedule = opdSchedule;
+		this.opd = opd;
 	}
 	public Long getdId() {
 		return dId;
@@ -68,11 +68,10 @@ public class Doctor {
 	public void setDoctorWorkExperience(String doctorWorkExperience) {
 		this.doctorWorkExperience = doctorWorkExperience;
 	}
-	public OPD_Schedule getOpdSchedule() {
-		return opdSchedule;
+	public OPDSchedule getOpdschedule() {
+		return opd;
 	}
-	public void setOpdSchedule(OPD_Schedule opdSchedule) {
-		this.opdSchedule = opdSchedule;
+	public void setOpdSchedule(OPDSchedule opd) {
+		this.opd = opd;
 	}
-	
 }

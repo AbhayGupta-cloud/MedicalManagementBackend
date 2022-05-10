@@ -19,6 +19,9 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+import com.medical.model.Role;
+import com.medical.model.User;
+import com.medical.model.UserRole;
 import com.medical.service.UserService;
 
 @SpringBootApplication
@@ -37,6 +40,7 @@ public class OnlineMedicalManagementSystemServerApplication implements CommandLi
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration config = new CorsConfiguration();
 		config.setAllowCredentials(true);
+		
 		config.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
 		config.setAllowedMethods(Collections.singletonList("*"));
 		config.setAllowedHeaders(Collections.singletonList("*"));
@@ -50,9 +54,9 @@ public class OnlineMedicalManagementSystemServerApplication implements CommandLi
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("Starting code...");
-		//User user=new User();
+//		User user=new User();
 //		user.setFirstName("Abhay");
-		
+//		
 //		user.setLastName("Gupta");
 //		user.setUsername("Abhay@1234");
 //		user.setPasssword(this.bcryptPasswordEncoder.encode("Abhay@123456"));
@@ -62,8 +66,7 @@ public class OnlineMedicalManagementSystemServerApplication implements CommandLi
 //		role1.setRoleId(45L);
 //		role1.setRoleName("Admin");
 //		Set<UserRole> userRoleSet=new HashSet<>();
-//		UserRole userRole=new UserRole();
-		
+//		UserRole userRole=new UserRole();		
 //		userRole.setRole(role1);
 //		userRole.setUser(user);
 //		userRoleSet.add(userRole);

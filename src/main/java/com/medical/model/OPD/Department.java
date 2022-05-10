@@ -24,9 +24,8 @@ public class Department {
 	private String departmentName;
 	private String description;
 	@OneToMany(mappedBy = "department",cascade = CascadeType.ALL,orphanRemoval = true)
-	//@JoinColumn(name = "department", foreignKey = @javax.persistence.ForeignKey(name = "none"))
 	@JsonIgnore
-	private Set<OPD_Schedule> schedule=new LinkedHashSet<>();
+	private Set<OPDSchedule> schedule=new LinkedHashSet<>();
 	public Department() {
 	}
 	public Department(String departmentName, String description) {

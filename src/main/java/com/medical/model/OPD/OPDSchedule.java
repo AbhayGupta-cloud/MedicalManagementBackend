@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class OPD_Schedule {
+public class OPDSchedule {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long sId;
@@ -24,6 +24,13 @@ public class OPD_Schedule {
 	private String opdDays;
 	private String location;
 	private String opdRegistrationTimings;
+	private String numberOfDoctors;
+	public String getNumberOfDoctors() {
+		return numberOfDoctors;
+	}
+	public void setNumberOfDoctors(String numberOfDoctors) {
+		this.numberOfDoctors = numberOfDoctors;
+	}
 	private boolean active=false;
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Department department;
@@ -33,14 +40,14 @@ public class OPD_Schedule {
 	public void setDoctors(Set<Doctor> doctors) {
 		this.doctors = doctors;
 	}
-	@OneToMany(mappedBy ="opdSchedule",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@OneToMany(mappedBy ="opd",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Set<Doctor> doctors=new HashSet<>();
 	
-	public OPD_Schedule() {
+	public OPDSchedule() {
 		// TODO Auto-generated constructor stub
 	}
-	public OPD_Schedule(String opdName, String consultantName, String opdDays, String location,
+	public OPDSchedule(String opdName, String consultantName, String opdDays, String location,
 			String opdRegistrationTimings, boolean active) {
 		super();
 		this.opdName = opdName;
